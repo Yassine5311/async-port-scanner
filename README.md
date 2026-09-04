@@ -1,34 +1,35 @@
 # async-port-scanner
 
-A fast, safe, and asynchronous TCP port scanner built with Python's `asyncio`.
-It resolves targets, checks ports concurrently, and can optionally read a short banner from open services.
+This project is an asynchronous TCP port scanner written in Python.
+It resolves targets, opens outbound connections, and optionally reads a short banner from an open service.
 
-## What it does
+## Purpose
 
-- Scans IPv4 and IPv6 addresses or hostnames
-- Accepts flexible port specifications such as `80`, `22,80,443`, or `1000-1010`
-- Uses a bounded worker pool to avoid unbounded socket creation
-- Supports banner grabbing for open TCP ports
-- Prints progress while scanning and can save results as JSON, CSV, or text
-- Includes a built-in loop self-test for repeated validation
+This tool is intended only for:
 
-## Responsible use and safety report
+- local development and testing
+- lab or home environments you own or control
+- explicitly authorized testing on systems covered by written permission
 
-This project is a network diagnostics tool for authorized use only. It is intended for:
+This tool is not intended for unauthorized reconnaissance, hidden scanning, bypassing access controls, or any other unlawful or unethical use.
 
-- local development and validation
-- owned lab or home environments
-- explicitly authorized testing on in-scope assets
+## Explicit responsibility statement
 
-It is not intended for unauthorized reconnaissance, stealth scanning, or bypassing access controls.
+This project is provided as a technical utility only. It is not a service, guarantee, or legal shield.
 
-> ⚠️ Authorization notice
+The author and maintainers do not accept responsibility for how this project is used after cloning, downloading, modifying, or redistributing it. Any person or organization using this project is solely responsible for ensuring that their use is lawful, authorized, and consistent with all applicable laws, contracts, policies, and terms of service.
+
+No one associated with this project is responsible for misuse, unauthorized scans, legal claims, civil or criminal consequences, network damage, or any other outcome caused by a third party using this software.
+
+## Safety notice
+
+> ⚠️ Only scan systems you own or are explicitly authorized to test.
 >
-> Only scan systems you own or are explicitly authorized to test. Unauthorized scanning may violate local law, network policy, or service terms.
+> Unauthorized port scanning may violate local law, network policy, or service terms.
 >
-> The CLI warns before scanning non-local targets and requires explicit confirmation unless you pass `--yes`.
+> The CLI asks for confirmation before scanning non-local targets unless `--yes` is used.
 
-For the full safety policy and scope statement, see [safety-report.md](safety-report.md).
+For the full safety policy and project scope, see [safety-report.md](safety-report.md).
 
 ## Installation
 

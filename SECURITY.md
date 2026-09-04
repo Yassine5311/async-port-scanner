@@ -1,56 +1,41 @@
 # Security & Responsible Use
 
-## Responsible use policy
+## Project scope
 
-This tool performs active TCP connection attempts against a target host.
-Only use it against:
+This project is a basic TCP-connect scanner for lawful and explicitly authorized network diagnostics.
 
-- Hosts and networks **you own**, or
-- Hosts and networks you have **explicit, documented authorization** to test
-  (e.g. a signed penetration-test agreement, a bug-bounty program's
-  in-scope assets, or your own home/lab network).
+It is intended for:
 
-Scanning systems without authorization may violate computer-crime laws
-(such as the U.S. Computer Fraud and Abuse Act), equivalent laws in other
-countries, or a network's terms of service — regardless of intent.
+- local testing
+- home or lab networks under your control
+- in-scope assets covered by written permission
 
-To reduce accidental misuse, the CLI will **prompt for explicit
-confirmation** before scanning any target that is not localhost or a
-private/link-local address (`--yes` bypasses this for scripted/CI use
-against infrastructure you control).
+It is not intended for unauthorized reconnaissance, stealth scanning, evasion, or any other misuse.
+
+## Explicit responsibility statement
+
+This software is provided as a technical tool only. The author and maintainers do not accept responsibility for how any user, team, or third party uses a clone, fork, or modified version of this project.
+
+Any person or organization using this project is solely responsible for ensuring that their use is lawful, authorized, and compliant with all applicable laws, contracts, policies, and service terms.
+
+The author and maintainers are not responsible for misuse, unauthorized scanning, legal claims, penalties, damages, or any other consequences arising from the use of this project by others.
 
 ## Built-in safeguards
 
-- Concurrency is hard-capped at 2000 simultaneous connection attempts.
-- Per-connection timeout is hard-capped at 30 seconds.
-- Port numbers and specs are validated before any network activity.
-- Banner reads are bounded in both size (1 KB) and time (1.5s) to avoid
-  hangs or memory exhaustion from a hostile/misbehaving service.
-- No shell execution, no dynamic code evaluation, no third-party
-  dependencies in the core package.
+- concurrency is capped at a safe limit
+- per-connection timeouts are enforced
+- port ranges are validated before scanning
+- banner reads are intentionally limited
+- no stealth, evasion, or anti-forensics features are included
 
 ## Safety report
 
-This project intentionally provides only a straightforward TCP-connect
-scanner. It does not include features intended to hide activity, evade
-logging, bypass access controls, or perform unauthorized reconnaissance.
+This project intentionally does not include features meant to hide activity, bypass access controls, evade detection, or perform unauthorized reconnaissance.
 
-Before using the scanner against any non-local target, confirm that you:
+If a contribution proposes stealth behavior, spoofed source addresses, traffic obfuscation, or any other evasive behavior, it is outside the scope of this project and should be rejected.
 
-- own the asset, or
-- have written authorization from the owner, or
-- are operating within a clearly defined authorized engagement
-
-If a contribution or issue proposes stealth features, source IP spoofing,
-traffic obfuscation, or evasion behavior, it is out of scope for this
-project and should be rejected as unsafe.
-
-See [safety-report.md](safety-report.md) for the project's formal safety,
-responsible-use, and contributor policy.
+See [safety-report.md](safety-report.md) for the full project safety and contributor policy.
 
 ## Reporting a vulnerability
 
-If you find a security issue in this project's code itself (not in a
-target you scanned with it), please open a private security advisory on
-GitHub ("Security" tab → "Report a vulnerability") rather than a public
-issue, so it can be addressed before disclosure.
+If you discover a security issue in the project itself, report it privately through the GitHub Security advisory flow instead of creating a public issue.
