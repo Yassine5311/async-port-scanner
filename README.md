@@ -29,7 +29,7 @@ No one associated with this project is responsible for misuse, unauthorized scan
 >
 > The CLI asks for confirmation before scanning non-local targets unless `--yes` is used.
 
-For the full safety policy and project scope, see [safety-report.md](safety-report.md).
+For the full safety policy and project scope, see [safety-report.md](SAFETY-REPORT.md).
 
 ## Installation
 
