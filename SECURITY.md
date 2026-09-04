@@ -29,6 +29,25 @@ against infrastructure you control).
 - No shell execution, no dynamic code evaluation, no third-party
   dependencies in the core package.
 
+## Safety report
+
+This project intentionally provides only a straightforward TCP-connect
+scanner. It does not include features intended to hide activity, evade
+logging, bypass access controls, or perform unauthorized reconnaissance.
+
+Before using the scanner against any non-local target, confirm that you:
+
+- own the asset, or
+- have written authorization from the owner, or
+- are operating within a clearly defined authorized engagement
+
+If a contribution or issue proposes stealth features, source IP spoofing,
+traffic obfuscation, or evasion behavior, it is out of scope for this
+project and should be rejected as unsafe.
+
+See [safety-report.md](safety-report.md) for the project's formal safety,
+responsible-use, and contributor policy.
+
 ## Reporting a vulnerability
 
 If you find a security issue in this project's code itself (not in a

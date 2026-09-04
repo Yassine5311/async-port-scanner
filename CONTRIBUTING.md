@@ -20,6 +20,25 @@ pytest -v                     # unit tests
 portscan --self-test          # loop-based integration self-test
 ```
 
+## Safety and responsible contribution policy
+
+Contributions must preserve the project’s purpose: a transparent,
+authorization-aware TCP scanner for legitimate diagnostics and network
+validation.
+
+Please do not propose or accept changes that:
+
+- hide or spoof the scanner's behavior
+- bypass authorization checks or weaken local safety prompts
+- enable stealth scanning, evasion, or anti-forensics features
+- target systems without an explicit authorization basis
+
+All behavior-changing changes should be reviewed with a safety mindset.
+If a patch alters network behavior, include a short explanation of why the
+change remains safe, bounded, and legal for authorized use.
+
+The project’s formal safety policy is documented in [safety-report.md](safety-report.md).
+
 ## Guidelines
 
 - Keep the core `scanner.py` free of CLI/argparse concerns — it should

@@ -12,11 +12,23 @@ It resolves targets, checks ports concurrently, and can optionally read a short 
 - Prints progress while scanning and can save results as JSON, CSV, or text
 - Includes a built-in loop self-test for repeated validation
 
+## Responsible use and safety report
+
+This project is a network diagnostics tool for authorized use only. It is intended for:
+
+- local development and validation
+- owned lab or home environments
+- explicitly authorized testing on in-scope assets
+
+It is not intended for unauthorized reconnaissance, stealth scanning, or bypassing access controls.
+
 > ⚠️ Authorization notice
 >
 > Only scan systems you own or are explicitly authorized to test. Unauthorized scanning may violate local law, network policy, or service terms.
 >
 > The CLI warns before scanning non-local targets and requires explicit confirmation unless you pass `--yes`.
+
+For the full safety policy and scope statement, see [safety-report.md](safety-report.md).
 
 ## Installation
 
